@@ -1,0 +1,258 @@
+
+//CARD FUNCTIONALITY 
+.card {
+    perspective: 150rem;
+    height: 41rem;
+    position: relative;
+
+.card-side {
+    height: 41rem;
+    transition: transform 1s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.card-side-front {
+    background-color: white;
+}   
+.card-side-back {
+    transform: rotateY(180deg);
+
+}
+
+&:hover .card-side-front {
+    transform: rotateY(-180deg);
+}
+&:hover .card-side-back {
+    transform: rotateY(0);
+}
+
+.card-side {
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.301);
+}   
+
+
+
+
+.card-side-back-1 {
+    transform: rotateY(180deg);
+
+    background-image: linear-gradient(to
+    right bottom, 
+    rgba(255, 187, 0, 0.801),
+        rgba(255, 120, 48, 0.897)
+        );
+
+}
+
+.card-side-back-2 {
+    transform: rotateY(180deg);
+
+    background-image: linear-gradient(to
+    right bottom, 
+    rgba(144, 238, 144, 0.836),
+    rgba(0, 128, 0, 0.623)
+        ),
+
+}
+
+.card-side-back-3 {
+    transform: rotateY(180deg);
+
+    background-image: linear-gradient(to
+    right bottom, 
+    rgba(41, 152, 255, 0.726),
+    rgba(85, 67, 250, 0.932)
+    ),
+
+}
+
+//FRONT SIDE STYLE
+.card-picture {
+
+    background-image: linear-gradient(
+    to right bottom,
+    rgba(255, 187, 0, 0.507),
+    rgba(255, 120, 48, 0.534)
+    ),
+    url(../img/nat-5.jpg);
+    height: 18rem;
+    background-size: cover;
+
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    /* .card-picture-1{
+        
+        
+    } */
+
+
+}
+
+.card-picture-second{
+    background-image: linear-gradient(
+    to right bottom,
+    rgba(144, 238, 144, 0.836),
+        rgba(0, 128, 0, 0.623)
+    ),
+    url(../img/nat-6.jpg);
+    height: 18rem;
+    background-size: cover;
+
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.card-heading {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: white;
+    position: absolute;
+    top: 8rem;
+    right: 2rem;
+    width: 75%;
+    text-align: right;
+
+    @include respond(tab-port) {
+        width: 57%;
+    }
+}
+
+.card-heading-span {
+    padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+
+}
+
+.card-heading-span-1 {
+background-image: linear-gradient(
+        to right bottom,
+        rgba(255, 187, 0, 0.801),
+        rgba(255, 120, 48, 0.897)
+        );
+}
+
+.card-heading-span-2 {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(144, 238, 144, 0.712),
+        rgba(0, 128, 0, 0.623)
+        );
+
+}
+
+.card-heading-span-3 {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(41, 152, 255, 0.726),
+        rgba(85, 67, 250, 0.932)
+        );
+    
+}
+
+.card-picture-thurs{
+        background-image: linear-gradient(
+    to right bottom,
+    rgba(41, 152, 255, 0.438),
+    rgba(85, 67, 250, 0.356)
+    ),
+    url(../img/nat-7.jpg);
+    height: 18rem;
+    background-size: cover;
+
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.card-details {
+    
+padding: 3rem;
+    ul{
+        list-style: none;
+        margin: 0 auto;
+        width: 80%;
+
+    }
+
+    li{
+        text-align: center;
+        padding-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    li:not(:last-child) {
+        border-bottom: 1px solid #eee;
+    }
+}
+
+//BACK SIDE STYLE
+
+.card-cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+
+    .card-price-box {
+        margin-bottom: 8rem;
+        color: white;
+    }
+    .card-price-only {
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+    .card-price-value {
+        font-size: 6rem;
+        font-weight: 100;
+
+        @include respond (tab-port) {
+            font-size: 4rem;
+        }
+    }
+}
+
+@include respond (tab-port) {
+
+    height: auto;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #fff;
+
+    .card-side {
+        position: relative;
+        border-radius: 0;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .card-side-back {
+        transform: rotateY(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
+    .card-details {
+        padding: 1rem 3rem; 
+  }
+
+  .card-cta {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    width: 100%;
+    padding: 5rem 3rem 3rem;
+  }
+
+  .card-price-box {
+    margin-bottom: 3rem;
+  }
+
+}

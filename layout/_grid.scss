@@ -1,0 +1,69 @@
+.row{
+    width: $grid-width;
+    margin: 0 auto;
+@include clearfix;
+
+@include respond (tab-port) {
+    max-width: 50rem;
+}
+
+@include respond (Phone) {
+    padding: 0 3rem;
+}
+
+    &:not(:last-child) {
+    margin-bottom: $gutter-vertcal;
+
+    @include respond (tab-port) {
+        margin-bottom: 3rem !important;
+    }
+}
+
+
+[class^="col-"] {
+    float: left;
+    
+    &:not(:last-child) {
+        margin-right: $gutter-horizontal;
+
+        @include respond (tab-port) {
+            margin-right: 0;
+            margin-bottom: 6rem;
+        }
+    }
+
+    @include respond (tab-port) {
+        width: 100% !important;
+        margin-bottom: 2rem;
+    }
+}
+.col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+}
+ 
+.col-1-of-3 {
+    width: calc((100% - #{$gutter-horizontal} * 2) / 3);
+}
+
+.col-1-of-4 {
+    width: calc((100% - #{$gutter-horizontal} * 3) /4);
+}
+
+.col-2-of-3 {
+    width: calc(
+    2 * (100% - #{$gutter-horizontal} * 2) / 3 + #{$gutter-horizontal}
+    );
+}
+
+.col-2-of-4 {
+    width: calc(
+        2 * (100% - 3 * #{$gutter-horizontal}) / 4 + #{$gutter-horizontal}
+    );
+}
+
+.col-3-of-4 {
+    width: calc(
+        3 *(100% - 3 * #{$gutter-horizontal}) / 4 + 2 * #{$gutter-horizontal}
+    );
+}
+}

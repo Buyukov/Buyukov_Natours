@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+
+  /*  @media (max-width:600px) {
+        font-size: 9px;
+    }  */
+
+
+    @include respond(big-desktop) {
+        font-size: 12px;
+    }
+    
+    @include respond(tab-land) {
+        font-size: 9px;
+    }
+
+    @include respond(tab-port) {
+        font-size: 8px;
+    }
+
+    @include respond (Phone) {
+        font-size: 7px;
+    }
+
+    @include respond (mini-phone) {
+        font-size: 5.5px;
+    }
+}
+body{
+    padding: 3rem;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}

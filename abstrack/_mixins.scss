@@ -1,0 +1,71 @@
+@mixin clearfix {
+&::after{
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+@mixin text-gradient {
+  display: inline-block;
+  background-image: linear-gradient(
+    to bottom,
+     lightgreen,
+     green, transparent);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600Ppx:Phone 
+601 - 900px:Table portrate
+901 - 1200px:Table landscape
+1201 - 1800px:Is our style
+1800 - Big desktop
+*/
+
+/*
+$Breakpoint argument choice
+ - Phone
+ - Tab-port
+ - Tab-land
+ - Big-desktop
+
+ Order: Base + typography > general layout + grid ? page layout > components 
+ */
+ 
+ @mixin respond($breakpoint) {
+  @if ($breakpoint == Phone ) {
+    @media (max-width:600px){
+      @content;
+    }
+  };
+
+  @if ($breakpoint == mini-phone ) {
+    @media (max-width:350px){
+      @content;
+    }
+  }
+
+  @if ($breakpoint == tab-port ) {
+    @media (max-width:900px){
+      @content;
+    }
+  }
+
+  @if ($breakpoint == tab-lend ) {
+    @media (max-width:1200px){
+      @content;
+    }
+  }
+
+  @if ($breakpoint == big-desktop ) {
+    @media (min-width:1800px){
+      @content;
+    }
+  }
+
+}

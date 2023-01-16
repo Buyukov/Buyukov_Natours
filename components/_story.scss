@@ -1,0 +1,99 @@
+.section-stories {
+    padding: 15rem 0;
+    position: relative;
+}
+
+.story {
+    background-color: white;
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.116);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+
+//yon tarafga qiyshaytiradi
+    transform: skew(-12deg);
+
+    @include respond (tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+    @include respond (Phone) {
+        transform: skew(0);
+    }
+}
+
+.story-shape {
+    width: 15rem;
+    height: 15rem;
+    background-color: orangered;
+    float: left;
+    clip-path: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    position: relative;
+
+    transform: translateX(-3rem) skew(12deg);
+
+    @include respond (Phone) {
+        transform: translateX(-3rem) skew(0);
+        }
+}
+
+.story_img {
+    height: 100%;
+    transform: translateX(-3.5rem) scale(1.5);
+    transition: all 0.5s;
+}
+
+.story-text {
+    transform: skew(12deg);
+
+    @include respond (Phone) {
+    transform: skew(0);
+    }
+}
+
+.story_caption {
+    font-size: 1.7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color:#fff;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.story:hover .story_caption{
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.story:hover .story_img {
+    transform: translateX(-3rem) scale(1);
+    filter: blur(3px) brightness(0.8);
+}
+
+// Background video
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.2;
+    
+}
+
+.bg-content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+

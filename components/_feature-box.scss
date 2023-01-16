@@ -1,0 +1,39 @@
+.feature-box{
+    background-color: white;
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 0.4rem;
+    box-shadow: 0, 1.5rem, 4rem, rgba(0, 0, 0, 0.678);
+    color: #333;
+    transition: transform 0.3s;
+
+    @include respond (tab-port) {
+        padding: 2rem;
+    }
+}
+
+.feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+}
+
+.feature-box_icon{
+    font-size: 6rem;
+
+    display: inline-block;
+    background-image: linear-gradient(to right bottom, lightgreen,green, transparent);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    margin-bottom: 0.5rem;
+
+}
+
+.heading-tertiary{
+    color: #666;
+}
+.feature-box_text{
+    color: #666;
+}

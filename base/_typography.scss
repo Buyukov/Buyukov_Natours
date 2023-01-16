@@ -1,0 +1,77 @@
+body {
+    font-family:italic, sans-serif;
+    color: #999;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+}
+
+
+.heading-primary{
+    color: white;
+    text-transform: uppercase;
+
+    margin-bottom: 3rem;
+
+&--main{
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    padding-bottom: 1.5rem;
+    
+    animation-name: moveinleft;
+    animation-duration: 3s;
+
+    @include respond(Phone) {
+        letter-spacing: 1rem;
+        font-size: 5rem;
+    }
+}
+
+&--sub{
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.3rem;
+
+    animation-name: moveinright;
+    animation-duration: 3s;
+
+    @include respond (Phone) {
+        letter-spacing: 0.5rem;
+    }
+
+}
+}
+
+.heading-secondary{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to bottom, lightgreen,green, transparent);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+transition: all 0.7s;
+&:hover{
+    transform:skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.274);
+}
+}
+
+.heading-tertiary{
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #222;
+}
+.paragraph{
+&:not(:last-child){
+    margin-bottom: 1.5rem;  
+}
+    
+}

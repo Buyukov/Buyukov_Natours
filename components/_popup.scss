@@ -1,0 +1,80 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(1rem);
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.popup_content {
+    width: 75%;
+    height: 40rem;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.2);
+    border-radius: 5px;
+    display: table;
+    overflow: hidden;
+    transition: all 0.4s 0.3s;
+    box-shadow: 0 2rem 4rem gray;
+}
+
+.popup_left {
+    width: 33.333333%;
+  /*  height: 100%;
+    background-color: orange; */
+    display: table-cell;
+}
+
+.popup_right {
+    width: 66.666667%;
+  /*  height: 100%;
+    background-color: orangered;  */
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 5rem;
+}
+
+.popup_img {
+    display: block;
+    width: 100%;
+}
+
+.popup_text {
+    margin-bottom: 4rem;
+    font-size: 1.2rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid #999;
+}
+
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup:target .popup_content {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup_close {
+    color: gray;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    line-height: 1;
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+.popup_close:hover {
+    color: lightgreen;
+}
